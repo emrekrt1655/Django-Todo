@@ -6,7 +6,13 @@
         <h3>Todo List</h3>
         <ul>
             {% for todo in todos %}
-            <li> {{todo}} </li>
+            {% if not todo.completed %}
+                <li> {{todo}} </li>
+            {% else %}
+                <li>
+                    <del> {{ todo }} </del>
+                </li>
+            {% endif %}
             {% endfor %}
         </ul>
     </div>
