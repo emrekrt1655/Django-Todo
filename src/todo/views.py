@@ -1,3 +1,8 @@
 from django.shortcuts import render
+from .models import Todo
+def home(request):
+    return render(request, "todo/home.html")
 
-# Create your views here.
+def todo_list(requset):
+    todos =  Todo.objects.all()
+    
